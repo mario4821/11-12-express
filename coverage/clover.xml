@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1525246992492" clover="3.2.0">
-  <project timestamp="1525246992493" name="All files">
-    <metrics statements="51" coveredstatements="34" conditionals="9" coveredconditionals="5" methods="13" coveredmethods="8" elements="73" coveredelements="47" complexity="0" loc="51" ncloc="51" packages="4" files="5" classes="5">
+<coverage generated="1525249216446" clover="3.2.0">
+  <project timestamp="1525249216446" name="All files">
+    <metrics statements="51" coveredstatements="22" conditionals="9" coveredconditionals="0" methods="13" coveredmethods="3" elements="73" coveredelements="25" complexity="0" loc="51" ncloc="51" packages="4" files="5" classes="5">
       <package name="__test__.lib">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="test.env.js" path="/Users/KANZ/codefellows/401/11-12-express/src/__test__/lib/test.env.js">
@@ -12,7 +12,7 @@
         </file>
       </package>
       <package name="lib">
-        <metrics statements="19" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+        <metrics statements="19" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
         <file name="logger.js" path="/Users/KANZ/codefellows/401/11-12-express/src/lib/logger.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
           <line num="3" count="1" type="stmt"/>
@@ -22,17 +22,17 @@
           <line num="16" count="1" type="stmt"/>
         </file>
         <file name="server.js" path="/Users/KANZ/codefellows/401/11-12-express/src/lib/server.js">
-          <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+          <metrics statements="14" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
           <line num="8" count="1" type="stmt"/>
           <line num="9" count="1" type="stmt"/>
           <line num="11" count="1" type="stmt"/>
           <line num="13" count="1" type="stmt"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="15" count="1" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
           <line num="18" count="1" type="stmt"/>
           <line num="19" count="1" type="stmt"/>
-          <line num="21" count="1" type="stmt"/>
-          <line num="22" count="1" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
           <line num="27" count="1" type="stmt"/>
           <line num="28" count="1" type="stmt"/>
           <line num="30" count="1" type="stmt"/>
@@ -47,22 +47,22 @@
         </file>
       </package>
       <package name="route">
-        <metrics statements="28" coveredstatements="12" conditionals="9" coveredconditionals="5" methods="6" coveredmethods="2"/>
+        <metrics statements="28" coveredstatements="4" conditionals="9" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <file name="dragon-router.js" path="/Users/KANZ/codefellows/401/11-12-express/src/route/dragon-router.js">
-          <metrics statements="28" coveredstatements="12" conditionals="9" coveredconditionals="5" methods="6" coveredmethods="2"/>
+          <metrics statements="28" coveredstatements="4" conditionals="9" coveredconditionals="0" methods="6" coveredmethods="0"/>
           <line num="8" count="1" type="stmt"/>
           <line num="10" count="1" type="stmt"/>
           <line num="12" count="1" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="14" count="2" type="cond" truecount="5" falsecount="0"/>
-          <line num="15" count="1" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
-          <line num="18" count="1" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
           <line num="20" count="0" type="stmt"/>
           <line num="21" count="0" type="stmt"/>
-          <line num="24" count="1" type="stmt"/>
-          <line num="25" count="1" type="stmt"/>
-          <line num="26" count="1" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
           <line num="30" count="1" type="stmt"/>
           <line num="31" count="0" type="stmt"/>
           <line num="33" count="0" type="stmt"/>
