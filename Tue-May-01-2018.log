@@ -1,0 +1,16 @@
+{"level":"info","message":"Server is listening on port 3000"}
+{"level":"info","message":"POST - processing a request"}
+{"level":"info","message":"Responding with a 400 error code"}
+{"level":"info","message":"POST - processing a request"}
+{"level":"info","message":"Responding with a 400 error code"}
+{"level":"info","message":"Returning 404 from the catch-all/default route"}
+{"level":"info","message":"Returning 404 from the catch-all/default route"}
+{"level":"info","message":"Server is off"}
+{"level":"info","message":"Server is listening on port 3000"}
+{"level":"info","message":"POST - processing a request"}
+{"level":"info","message":"Responding with a 400 error code"}
+{"level":"info","message":"POST - processing a request"}
+{"level":"info","message":"Responding with a 400 error code"}
+{"level":"info","message":"Returning 404 from the catch-all/default route"}
+{"level":"info","message":"Returning 404 from the catch-all/default route"}
+{"level":"info","message":"Server is off"}

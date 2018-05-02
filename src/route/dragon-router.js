@@ -11,7 +11,7 @@ const dragonRouter = new Router();
 
 dragonRouter.post('/api/dragons', jsonParser, (request, response) => {
   logger.log(logger.INFO, 'POST - processing a request');
-  if (!request.body.title) {
+  if (!request.body.species || !request.body.color || !request.body.location) {
     logger.log(logger.INFO, 'Responding with a 400 error code');
     return response.sendStatus(400);
   }

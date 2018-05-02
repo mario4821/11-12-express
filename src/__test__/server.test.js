@@ -9,8 +9,9 @@ const apiURL = `http://localhost:${process.env.PORT}/api/dragons`;
 
 const createDragonMock = () => {
   return new Dragon({
-    species: faker.lorem.words(10),
-    color: faker.lorem.words(25),
+    species: faker.lorem,
+    color: faker.lorem,
+    location: faker.lorem,
   }).save();
 };
 
@@ -18,10 +19,11 @@ describe('/api/dragons', () => {
   beforeAll(startServer);
   afterAll(stopServer);
   afterEach(() => Dragon.remove({}));
-  test('POST - It should respond with a 200 status', () => {
+  test('POST - should respond with a 200 status', () => {
     const dragonToPost = {
-      species: faker.lorem.words(10),
-      color: faker.lorem.words(50),
+      species: faker.lorem,
+      color: faker.lorem,
+      location: faker.lorem,
     };
     return superagent.post(apiURL)
       .send(dragonToPost)
@@ -29,13 +31,13 @@ describe('/api/dragons', () => {
         expect(response.status).toEqual(200);
         expect(response.body.species).toEqual(dragonToPost.species);
         expect(response.body.color).toEqual(dragonToPost.color);
+        expect(response.body.location).toEqual(dragonToPost.location);
         expect(response.body._id).toBeTruthy();
-        expect(response.body.timestamp).toBeTruthy();
       });
   });
   test('POST - should respond with a 400 status ', () => {
     const dragonToPost = {
-      color: faker.lorem.words(50),
+      color: faker.lorem,
     };
     return superagent.post(apiURL)
       .send(dragonToPost)
@@ -56,6 +58,8 @@ describe('/api/dragons', () => {
           expect(response.status).toEqual(200);
           expect(response.body.species).toEqual(dragonToTest.species);
           expect(response.body.color).toEqual(dragonToTest.color);
+          expect(response.body.location).toEqual(dragonToTest.location);
+          expect(response.body._id).toBeTruthy();
         });
     });
     test('should respond with 404 if there is no dragon found', () => {

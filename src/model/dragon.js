@@ -11,11 +11,10 @@ const dragonSchema = mongoose.Schema({
   color: {
     type: String,
     required: true,
-    minlength: 10,
   },
-  birth: {
-    type: Date,
-    default: () => new Date(),
+  location: {
+    type: String,
+    required: true,
   },
 });
 
