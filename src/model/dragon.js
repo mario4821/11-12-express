@@ -6,7 +6,6 @@ const dragonSchema = mongoose.Schema({
   species: {
     type: String,
     required: true,
-    unique: true,
   },
   color: {
     type: String,

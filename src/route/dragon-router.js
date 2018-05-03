@@ -27,10 +27,10 @@ dragonRouter.post('/api/dragons', jsonParser, (request, response) => {
     });
 });
 
-dragonRouter.get('/api/dragon/:id', (request, response) => {
+dragonRouter.get('/api/dragon/:_id', (request, response) => {
   logger.log(logger.INFO, 'GET - processing a request');
 
-  return Dragon.findById(request.params.id)
+  return Dragon.findById(request.params._id)
     .then((dragon) => {
       if (!dragon) {
         logger.log(logger.INFO, 'GET - responding with a 404 status code - (!dragon)');
@@ -42,10 +42,33 @@ dragonRouter.get('/api/dragon/:id', (request, response) => {
     .catch((error) => {
       if (error.message.toLowerCase().indexOf('cast to objectid failed') > -1) {
         logger.log(logger.INFO, 'GET - responding with a 404 status code - objectId');
-        logger.log(logger.VERBOSE, `Could not parse the specific object id ${request.params.id}`);
+        logger.log(logger.VERBOSE, `Could not parse the specific object id ${request.params._id}`);
         return response.sendStatus(404);
       }
       logger.log(logger.ERROR, '__GET_ERROR__Returning a 500 status code');
+      logger.log(logger.ERROR, error);
+      return response.sendStatus(500);
+    });
+});
+
+dragonRouter.delete('/api/dragon/:_id', (request, response) => {
+  logger.log(logger.INFO, 'DELETE - processing request');
+
+  return Dragon.findByIdAndRemove(request.params._id)
+    .then((dragon) => {
+      if (!dragon) {
+        logger.log(logger.INFO, 'DELETE error - no dragon found with this id');
+        return response.sendStatus(404);
+      }
+      logger.log(logger.INFO, 'DELETE request processed - 200 status');
+      return response.sendStatus(200);
+    })
+    .catch((error) => {
+      if (error.message.toLowerCase().indexOf('obectid failed') > -1) {
+        logger.log(logger.INFO, `GET error - could not parse id: ${request.params._id}`);
+        return response.sendStatus(404);
+      }
+
       logger.log(logger.ERROR, error);
       return response.sendStatus(500);
     });
