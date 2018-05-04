@@ -19,6 +19,7 @@ describe('/api/dragons', () => {
   beforeAll(startServer);
   afterAll(stopServer);
   afterEach(() => Dragon.remove({}));
+
   test('POST - should respond with a 200 status', () => {
     const dragonToPost = {
       species: faker.lorem.words(15),
@@ -46,7 +47,7 @@ describe('/api/dragons', () => {
         expect(response.status).toEqual(400);
       });
   });
-  describe('GET /api/dragons', () => {
+  describe('GET /api/dragons/:_id', () => {
     test('should respond with 200 if there are no errors', () => {
       let dragonToTest = null;
       return createMockDragon()
@@ -71,27 +72,27 @@ describe('/api/dragons', () => {
     });
   });
 
-  describe('DELETE api/dragon/:_id', () => {
+  describe('DELETE api/dragon', () => {
     test('DELETE - should respond with 200 status', () => {
       return createMockDragon()
-      .then((dragon) => {
-        return superagent.delete(`${apiURL}/${dragon._id}`);
-      })
-      .then((response) => {
-        expect(response.status).toEqual(200);
-        expect(response.body._id).toBeFalsy();
-      });
+        .then((dragon) => {
+          return superagent.delete(`${apiURL}/${dragon._id}`);
+        })
+        .then((response) => {
+          expect(response.status).toEqual(200);
+          expect(response.body._id).toBeFalsy();
+        });
     });
 
     test('DELETE - should respond with 404 if id not found', () => {
       return createMockDragon()
-      .then(() => {
-        return superagent.delete(`${apiURL}/mockdragon`);
-      })
-      .then(Promise.reject)
-      .catch((response) => {
-        expect(response.status).toEqual(404);
-      });
+        .then(() => {
+          return superagent.delete(`${apiURL}/InvalidId`);
+        })
+        .then(Promise.reject)
+        .catch((response) => {
+          expect(response.status).toEqual(404);
+        });
     });
   });
 });
