@@ -4,16 +4,21 @@ import express from 'express';
 import mongoose from 'mongoose';
 import logger from './logger';
 import dragonRoutes from '../route/dragon-router';
+import loggerMiddleware from './logger-middleware';
+import errorMiddleware from './error-middleware';
 
 const app = express();
 let server = null;
 
+app.use(loggerMiddleware);
 app.use(dragonRoutes);
 
 app.all('*', (request, response) => {
   logger.log(logger.INFO, 'Returning 404 from the catch-all/default route');
   return response.sendStatus(404);
 });
+
+app.use(errorMiddleware);
 
 const startServer = () => {
   return mongoose.connect(process.env.MONGODB_URI)
